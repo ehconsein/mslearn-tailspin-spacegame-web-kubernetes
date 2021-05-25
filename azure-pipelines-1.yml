@@ -70,6 +70,9 @@ stages:
               action: createSecret
               secretName: $(imagePullSecret)
               dockerRegistryEndpoint: $(dockerRegistryServiceConnection)
+              strategy: 
+                maxParallel: 1
+              
 
           - task: AzureCLI@2
             displayName: get host suffix
