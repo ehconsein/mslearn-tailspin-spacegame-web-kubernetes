@@ -1,0 +1,19 @@
+apiVersion : apps/v1
+kind: Deployment
+metadata:
+  name: "eahsbmptest-328c"
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: "eahsbmptest-328c"
+  template:
+    metadata:
+      labels:
+        app: "eahsbmptest-328c"
+    spec:
+      containers:
+        - name: "eahsbmptest-328c"
+          image: "eahs1212.azurecr.io/eahsbmptest"
+          ports:
+          - containerPort: 80
